@@ -1,6 +1,5 @@
 const mongoose = require("mongoose")
 
-
 const ProductSchema = new mongoose.Schema({
     name: { type: String, required: true, trim: true },
     description: { type: String, required: true, },
@@ -13,7 +12,7 @@ const ProductSchema = new mongoose.Schema({
     colors: { type: [String], required: true },
     collections: { type: String, required: true },
     material: { type: String },
-    gender: { type: String, enum: ["Mens", "Womens"] },
+    gender: { type: String, enum: ["Men", "Women"] },
     images: [{ url: { type: String, required: true, } }],
     isFeature: { type: Boolean, default: false },
     isPublished: { type: Boolean, default: false },

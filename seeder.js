@@ -5,7 +5,7 @@ const User = require("./models/User")
 const Cart = require("./models/Cart")
 const products = require("./data/products");
 
-dotenv = config();
+dotenv.config();
 
 //connect to database
 mongoose.connect(process.env.MONGO_URL);

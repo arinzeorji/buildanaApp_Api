@@ -11,7 +11,8 @@ const orderRoutes = require("./routes/orderRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const subscriberRoutes = require("./routes/subscriberRoutes");
 const adminRoutes = require("./routes/adminRoutes");
-
+const adminOrderRoutes = require("./routes/adminOrderRoutes");
+const adminProductRoutes = require("./routes/adminProductRoutes");
 
 const app = express();
 app.use(express.json());
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
     res.send("WELCOME TO BACKEND API")
 });
 
+
 // API ROUTES
 app.use(userRoutes);
 app.use(productRoutes);
@@ -39,6 +41,8 @@ app.use(orderRoutes);
 
 //ADMIN ROUTES
 app.use(adminRoutes);
+app.use(adminOrderRoutes);
+app.use(adminProductRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on PORT: ${PORT}`);
